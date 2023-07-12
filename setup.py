@@ -15,14 +15,14 @@ INSTALL_REQUIRES = [
     "Pillow",
     "matplotlib",
     "scikit-image>=0.14.2",
-    "opencv-python-headless",
+    # "opencv-python-headless",
     "imageio<=2.6.1; python_version<'3.5'",
     "imageio; python_version>='3.5'",
     "Shapely"
 ]
 
 ALT_INSTALL_REQUIRES = {
-    "opencv-python-headless": ["opencv-python", "opencv-contrib-python", "opencv-contrib-python-headless"],
+    # "opencv-python-headless": ["opencv-python", "opencv-contrib-python", "opencv-contrib-python-headless"],
 }
 
 
@@ -46,10 +46,10 @@ def get_install_requirements(main_requires, alternative_requires):
     If an install require has an alternative option, check if this option is installed
     If that is the case, replace the install require by the alternative to not install dual package"""
     install_requires = []
-    for main_require in main_requires:
-        if main_require in alternative_requires:
-            main_require = check_alternative_installation(main_require, alternative_requires.get(main_require))
-        install_requires.append(main_require)
+    # for main_require in main_requires:
+        # if main_require in alternative_requires:
+            # main_require = check_alternative_installation(main_require, alternative_requires.get(main_require))
+        # install_requires.append(main_require)
 
     return install_requires
 
